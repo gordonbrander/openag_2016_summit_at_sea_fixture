@@ -28,7 +28,8 @@
       ],
       "inputs": {
         "cmd": {
-          "type": "std_msgs/Float32"
+          "type": "std_msgs/Float32",
+          "categories": ["actuators"]
         }
       },
       "dependencies": [
@@ -57,7 +58,8 @@
       ],
       "inputs": {
         "cmd": {
-          "type": "std_msgs/Bool"
+          "type": "std_msgs/Bool",
+          "categories": ["actuators"]
         }
       },
       "dependencies": [
