@@ -28,7 +28,8 @@
       ],
       "inputs": {
         "cmd": {
-          "type": "std_msgs/Float32"
+          "type": "std_msgs/Float32",
+          "categories": ["actuators"]
         }
       },
       "dependencies": [
@@ -57,7 +58,8 @@
       ],
       "inputs": {
         "cmd": {
-          "type": "std_msgs/Bool"
+          "type": "std_msgs/Bool",
+          "categories": ["actuators"]
         }
       },
       "dependencies": [
@@ -70,13 +72,23 @@
       "_id": "red_light_1",
       "arguments": [3],
       "environment": "environment_1",
-      "type": "pwm_actuator"
+      "type": "pwm_actuator",
+      "inputs": {
+        "cmd": {
+          "variable": "light_illuminance"
+        }
+      }
     },
     {
       "_id": "blue_light_1",
       "arguments": [4],
       "environment": "environment_1",
-      "type": "pwm_actuator"
+      "type": "pwm_actuator",
+      "inputs": {
+        "cmd": {
+          "variable": "light_illuminance"
+        }
+      }
     },
     {
       "_id": "white_light_1",
@@ -156,6 +168,14 @@
       "type": "openag_brain:handle_arduino.py",
       "parameters": {
         "should_flash": true
+      }
+    },
+    {
+      "_id": "light_panel",
+      "type": "openag_brain:direct_controller.py",
+      "environment": "environment_1",
+      "parameters": {
+        "variable": "light_illuminance"
       }
     }
   ]
