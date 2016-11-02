@@ -136,15 +136,6 @@
       "type": "mhz16"
     },
     {
-      "_id": "ds18b20_1",
-      "type": "ds18b20",
-      "environment": "environment_1",
-      "arguments": [6],
-      "outputs": {
-        "temperature": {"variable": "water_temperature"}
-      }
-    },
-    {
       "_id": "am2315_1",
       "type": "am2315",
       "environment": "environment_1"
