@@ -128,12 +128,24 @@
     },
     {
       "_id": "heater_1",
-      "arguments": [29, true],
+      "arguments": [25, true],
       "environment": "environment_1",
       "type": "binary_actuator",
       "inputs": {
         "cmd": {
           "variable": "air_temperature"
+        }
+      }
+    },
+    {
+      "_id": "cooler_1",
+      "arguments": [23, true],
+      "environment": "environment_1",
+      "type": "binary_actuator",
+      "inputs": {
+        "cmd": {
+          "variable": "air_temperature",
+          "multiplier": -1.0
         }
       }
     },
