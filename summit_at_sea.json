@@ -127,6 +127,17 @@
       "type": "binary_actuator"
     },
     {
+      "_id": "heater_1",
+      "arguments": [29, true],
+      "environment": "environment_1",
+      "type": "binary_actuator",
+      "inputs": {
+        "cmd": {
+          "variable": "air_temperature"
+        }
+      }
+    },
+    {
       "_id": "humidifier",
       "arguments": [27, true],
       "environment": "environment_1",
@@ -167,6 +178,21 @@
       "environment": "environment_1",
       "parameters": {
         "variable": "light_illuminance"
+      }
+    },
+    {
+      "_id": "air_temperature_loop_1",
+      "type": "openag_brain:pid.py",
+      "environment": "environment_1",
+      "parameters": {
+        "variable": "air_temperature",
+        "Kp": 5,
+        "Ki": 0,
+        "Kd": 0,
+        "upper_limit": 1,
+        "lower_limit": -1,
+        "windup_limit": 1000,
+        "deadband_width": 0
       }
     }
   ]
